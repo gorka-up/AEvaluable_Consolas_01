@@ -13,6 +13,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject loseMenu;
     [SerializeField] private GameObject winMenu;
 
+    private Vector2 moveAmount;
+
     void Start()
     {
         this.transform.position = start.position;
@@ -43,13 +45,10 @@ public class PlayerController : MonoBehaviour
         else if (collision.gameObject.tag == "End") Win();
     }
 
-    public void OnMoveRight(InputAction.CallbackContext context)
+    public void OnMove(InputAction.CallbackContext context)
     {
         //move character
-    }
-    public void OnMoveLeft(InputAction.CallbackContext context)
-    {
-        //move character
+        moveAmount = context.ReadValue<Vector2>();
     }
 
     public void OnJump(InputAction.CallbackContext context)

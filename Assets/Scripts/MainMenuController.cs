@@ -34,12 +34,12 @@ public class MainMenuController : MonoBehaviour
         };
     }
 
-    void Play()
+    public void Play()
     {
         SceneManager.LoadScene("Gameplay");
     }
 
-    void Exit()
+    public void Exit()
     {
         Application.Quit();
     }
